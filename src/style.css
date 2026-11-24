@@ -1,35 +1,40 @@
+@import './brand.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   body {
-    @apply bg-gray-50 font-sans;
+    @apply bg-background text-foreground font-sans antialiased;
   }
-  
+
   h1, h2, h3, h4, h5, h6 {
-    @apply font-fantasy;
+    @apply font-display;
   }
 }
 
 @layer components {
   .btn-primary {
-    @apply px-6 py-3 bg-fantasy-600 text-white font-medium rounded-lg hover:bg-fantasy-700 transition-colors duration-200 shadow-lg hover:shadow-xl;
+    @apply inline-flex items-center justify-center gap-2 rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-sm transition-colors duration-200 hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2;
   }
-  
+
   .btn-secondary {
-    @apply px-6 py-3 bg-white text-fantasy-600 font-medium rounded-lg border-2 border-fantasy-600 hover:bg-fantasy-50 transition-colors duration-200;
+    @apply inline-flex items-center justify-center gap-2 rounded-lg bg-accent px-5 py-2.5 text-sm font-semibold text-accent-foreground transition-colors duration-200 hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2;
   }
-  
+
   .card {
-    @apply bg-white rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 overflow-hidden;
+    @apply overflow-hidden rounded-xl border border-border bg-card text-card-foreground shadow-sm transition-shadow duration-300 hover:shadow-md;
   }
-  
+
   .hero-section {
-    @apply bg-fantasy-gradient bg-hero-pattern;
+    background-image:
+      radial-gradient(circle at 50% 0%, color-mix(in oklch, var(--primary-foreground) 22%, transparent), transparent 60%),
+      linear-gradient(135deg, var(--primary), var(--secondary));
+    color: var(--primary-foreground);
   }
-  
+
   .section-padding {
-    @apply px-4 sm:px-6 lg:px-8 py-12;
+    @apply px-4 py-16 sm:px-6 md:py-20 lg:px-8;
   }
-} 
+}

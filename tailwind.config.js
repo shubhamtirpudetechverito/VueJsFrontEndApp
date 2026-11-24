@@ -7,43 +7,74 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        'fantasy': ['Cinzel', 'serif'],
-        'sans': ['Inter', 'sans-serif'],
+        'display': ['var(--font-display)', 'Inter', 'sans-serif'],
+        'fantasy': ['var(--font-display)', 'Inter', 'sans-serif'],
+        'sans': ['var(--font-sans)', 'Inter', 'sans-serif'],
+        'serif': ['var(--font-serif)', 'Georgia', 'serif'],
+        'mono': ['var(--font-mono)', 'ui-monospace', 'monospace'],
       },
       colors: {
-        'fantasy': {
-          50: '#faf7ff',
-          100: '#f3edff',
-          200: '#e9ddff',
-          300: '#d7c1ff',
-          400: '#bf9bff',
-          500: '#a570ff',
-          600: '#9149f7',
-          700: '#7c2ee3',
-          800: '#6926bf',
-          900: '#56229c',
-          950: '#341069',
+        'background': 'var(--background)',
+        'foreground': 'var(--foreground)',
+        'card': {
+          DEFAULT: 'var(--card)',
+          foreground: 'var(--card-foreground)',
         },
-        'mythic': {
-          50: '#fff8ed',
-          100: '#ffefd4',
-          200: '#ffdba8',
-          300: '#ffc071',
-          400: '#ff9a38',
-          500: '#ff7a11',
-          600: '#f05d07',
-          700: '#c74508',
-          800: '#9e380f',
-          900: '#7f3010',
-          950: '#451606',
-        }
+        'popover': {
+          DEFAULT: 'var(--popover)',
+          foreground: 'var(--popover-foreground)',
+        },
+        'primary': {
+          DEFAULT: 'var(--primary)',
+          foreground: 'var(--primary-foreground)',
+        },
+        'secondary': {
+          DEFAULT: 'var(--secondary)',
+          foreground: 'var(--secondary-foreground)',
+        },
+        'muted': {
+          DEFAULT: 'var(--muted)',
+          foreground: 'var(--muted-foreground)',
+        },
+        'accent': {
+          DEFAULT: 'var(--accent)',
+          foreground: 'var(--accent-foreground)',
+        },
+        'destructive': {
+          DEFAULT: 'var(--destructive)',
+          foreground: 'var(--destructive-foreground)',
+        },
+        'success': {
+          DEFAULT: 'var(--success)',
+          foreground: 'var(--success-foreground)',
+        },
+        'warning': {
+          DEFAULT: 'var(--warning)',
+          foreground: 'var(--warning-foreground)',
+        },
+        'info': {
+          DEFAULT: 'var(--info)',
+          foreground: 'var(--info-foreground)',
+        },
+        'border': 'var(--border)',
+        'input': 'var(--input)',
+        'ring': 'var(--ring)',
       },
-      backgroundImage: {
-        'fantasy-gradient': 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-        'mythic-gradient': 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
-        'hero-pattern': "url('data:image/svg+xml,%3Csvg width=\"60\" height=\"60\" viewBox=\"0 0 60 60\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cg fill=\"none\" fill-rule=\"evenodd\"%3E%3Cg fill=\"%239C92AC\" fill-opacity=\"0.1\"%3E%3Ccircle cx=\"30\" cy=\"30\" r=\"1.5\"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')"
-      }
+      borderRadius: {
+        'sm': 'var(--radius-sm)',
+        'md': 'var(--radius-md)',
+        'lg': 'var(--radius-lg)',
+        'xl': 'var(--radius-xl)',
+        '2xl': 'calc(var(--radius-xl) + 4px)',
+      },
+      boxShadow: {
+        'xs': 'var(--shadow-xs)',
+        'sm': 'var(--shadow-sm)',
+        'md': 'var(--shadow-md)',
+        'lg': 'var(--shadow-lg)',
+        'xl': 'var(--shadow-xl)',
+      },
     },
   },
   plugins: [],
-} 
+}

@@ -1,10 +1,10 @@
 <template>
   <div>
     <!-- Page Header -->
-    <section class="bg-fantasy-gradient text-white py-16">
+    <section class="hero-section spotlight text-primary-foreground py-16">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center">
-          <h1 class="text-4xl md:text-5xl font-fantasy font-bold mb-4">
+          <h1 class="text-4xl md:text-5xl font-display font-bold mb-4">
             Art Marketplace
           </h1>
           <p class="text-xl opacity-90 max-w-2xl mx-auto">
@@ -15,7 +15,7 @@
     </section>
 
     <!-- Filters and Search -->
-    <section class="bg-white shadow-sm border-b">
+    <section class="bg-card border-b border-border shadow-sm">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
         <div class="flex flex-col lg:flex-row gap-6 items-center justify-between">
           <!-- Search Box -->
@@ -25,9 +25,9 @@
                 v-model="searchQuery"
                 type="text"
                 placeholder="Search artworks..."
-                class="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-fantasy-500 focus:border-fantasy-500"
+                class="w-full pl-10 pr-4 py-3 border border-input rounded-lg focus:ring-2 focus:ring-ring focus:border-ring"
               />
-              <svg class="absolute left-3 top-3.5 h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="absolute left-3 top-3.5 h-5 w-5 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
               </svg>
             </div>
@@ -35,7 +35,7 @@
 
           <!-- Filters -->
           <div class="flex flex-wrap gap-4">
-            <select v-model="selectedCategory" class="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-fantasy-500">
+            <select v-model="selectedCategory" class="px-4 py-2 border border-input rounded-lg focus:ring-2 focus:ring-ring">
               <option value="">All Categories</option>
               <option value="dragon">Dragons</option>
               <option value="fantasy">Fantasy Creatures</option>
@@ -44,14 +44,14 @@
               <option value="abstract">Abstract</option>
             </select>
 
-            <select v-model="priceRange" class="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-fantasy-500">
+            <select v-model="priceRange" class="px-4 py-2 border border-input rounded-lg focus:ring-2 focus:ring-ring">
               <option value="">All Prices</option>
               <option value="low">Under $50</option>
               <option value="mid">$50 - $150</option>
               <option value="high">Above $150</option>
             </select>
 
-            <select v-model="sortBy" class="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-fantasy-500">
+            <select v-model="sortBy" class="px-4 py-2 border border-input rounded-lg focus:ring-2 focus:ring-ring">
               <option value="newest">Newest</option>
               <option value="popular">Most Popular</option>
               <option value="price-low">Price: Low to High</option>
@@ -67,7 +67,7 @@
       <div class="max-w-7xl mx-auto">
         <!-- Results Count -->
         <div class="mb-8">
-          <p class="text-gray-600">
+          <p class="text-muted-foreground">
             Found {{ filteredArtworks.length }} artworks
           </p>
         </div>
@@ -76,21 +76,21 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           <div v-for="artwork in filteredArtworks" :key="artwork.id" class="card group">
             <div class="relative overflow-hidden">
-              <div class="aspect-w-4 aspect-h-3 bg-gradient-to-br from-purple-400 via-pink-500 to-red-500">
+              <div class="aspect-w-4 aspect-h-3 bg-gradient-to-br from-primary to-secondary">
                 <div class="w-full h-64 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
-                  <span class="text-white font-fantasy text-lg">{{ artwork.title }}</span>
+                  <span class="text-primary-foreground font-display text-lg">{{ artwork.title }}</span>
                 </div>
               </div>
               
               <!-- Quick Actions -->
               <div class="absolute top-4 right-4 space-y-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <button class="w-10 h-10 bg-white/90 rounded-full flex items-center justify-center shadow-lg hover:bg-white transition-colors">
-                  <svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <button class="w-10 h-10 bg-card rounded-full flex items-center justify-center shadow-md hover:bg-muted transition-colors">
+                  <svg class="w-5 h-5 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
                   </svg>
                 </button>
-                <button class="w-10 h-10 bg-white/90 rounded-full flex items-center justify-center shadow-lg hover:bg-white transition-colors">
-                  <svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <button class="w-10 h-10 bg-card rounded-full flex items-center justify-center shadow-md hover:bg-muted transition-colors">
+                  <svg class="w-5 h-5 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
                   </svg>
@@ -99,20 +99,20 @@
 
               <!-- Artist Badge -->
               <div class="absolute bottom-4 left-4">
-                <span class="px-2 py-1 bg-black/50 text-white text-xs rounded-full">
+                <span class="px-2 py-1 bg-foreground text-background text-xs rounded-full">
                   {{ artwork.category }}
                 </span>
               </div>
             </div>
 
             <div class="p-6">
-              <h3 class="font-fantasy text-lg font-semibold mb-2 line-clamp-1">{{ artwork.title }}</h3>
-              <p class="text-gray-600 mb-1">by {{ artwork.artist }}</p>
-              <p class="text-gray-500 text-sm mb-4 line-clamp-2">{{ artwork.description }}</p>
+              <h3 class="font-display text-lg font-semibold mb-2 line-clamp-1">{{ artwork.title }}</h3>
+              <p class="text-muted-foreground mb-1">by {{ artwork.artist }}</p>
+              <p class="text-muted-foreground text-sm mb-4 line-clamp-2">{{ artwork.description }}</p>
               
               <div class="flex items-center justify-between mb-4">
-                <span class="text-xl font-bold text-fantasy-600">${{ artwork.price.toLocaleString() }}</span>
-                <div class="flex items-center text-sm text-gray-500">
+                <span class="text-xl font-bold text-primary">${{ artwork.price.toLocaleString() }}</span>
+                <div class="flex items-center text-sm text-muted-foreground">
                   <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
                     <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
                   </svg>

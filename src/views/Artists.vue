@@ -1,10 +1,10 @@
 <template>
   <div>
     <!-- Page Header -->
-    <section class="bg-gradient-to-r from-purple-600 via-pink-600 to-red-600 text-white py-16">
+    <section class="hero-section spotlight text-primary-foreground py-16">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center">
-          <h1 class="text-4xl md:text-5xl font-fantasy font-bold mb-4">
+          <h1 class="text-4xl md:text-5xl font-display font-bold mb-4">
             Featured Artists
           </h1>
           <p class="text-xl opacity-90 max-w-2xl mx-auto">
@@ -21,17 +21,17 @@
           <div v-for="artist in featuredArtists" :key="artist.id" class="card">
             <div class="p-6">
               <div class="flex items-center space-x-4 mb-6">
-                <div class="w-16 h-16 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full flex items-center justify-center">
-                  <span class="text-white font-fantasy font-bold text-lg">{{ artist.name.charAt(0) }}</span>
+                <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center">
+                  <span class="text-primary-foreground font-display font-bold text-lg">{{ artist.name.charAt(0) }}</span>
                 </div>
                 <div>
-                  <h3 class="font-fantasy text-xl font-semibold">{{ artist.name }}</h3>
-                  <p class="text-gray-600">{{ artist.specialty }}</p>
+                  <h3 class="font-display text-xl font-semibold">{{ artist.name }}</h3>
+                  <p class="text-muted-foreground">{{ artist.specialty }}</p>
                 </div>
               </div>
-              <p class="text-gray-700 mb-4">{{ artist.bio }}</p>
+              <p class="text-muted-foreground mb-4">{{ artist.bio }}</p>
               <div class="mb-4">
-                <div class="flex items-center space-x-4 text-sm text-gray-500">
+                <div class="flex items-center space-x-4 text-sm text-muted-foreground">
                   <span>{{ artist.artworks }} artworks</span>
                   <span>{{ artist.followers }} followers</span>
                 </div>
@@ -47,15 +47,15 @@
     </section>
 
     <!-- Become an Artist -->
-    <section class="section-padding bg-fantasy-gradient text-white">
+    <section class="section-padding bg-primary text-primary-foreground">
       <div class="max-w-4xl mx-auto text-center">
-        <h2 class="text-3xl md:text-4xl font-fantasy font-bold mb-6">
+        <h2 class="text-3xl md:text-4xl font-display font-bold mb-6">
           Join Our Artist Community
         </h2>
         <p class="text-xl mb-8 opacity-90">
           Showcase your creative talent and connect with collectors worldwide
         </p>
-        <button class="btn-secondary bg-white text-fantasy-600 hover:bg-gray-100 text-lg px-8 py-4">
+        <button class="btn-secondary bg-card text-primary hover:opacity-90 text-lg px-8 py-4">
           Apply to Become an Artist
         </button>
       </div>
